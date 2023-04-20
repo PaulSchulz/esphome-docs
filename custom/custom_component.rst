@@ -119,7 +119,7 @@ Home Assistant, as well as starting services in Home Assistant.
         call_homeassistant_service("homeassistant.service");
       }
       void on_state_changed(std::string state) {
-        ESP_LOGD(TAG, "Temperature has changed to %s", state.c_str());
+        ESP_LOGD("custom", "Temperature has changed to %s", state.c_str());
       }
     };
 
