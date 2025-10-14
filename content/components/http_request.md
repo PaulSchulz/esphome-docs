@@ -198,7 +198,7 @@ on_...
                   - response->duration_ms
                   - response->get_response_header("Content-Type").c_str()
             - lambda: |-
-                ESP_LOGD(TAG, "Response status: %d, Duration: %u ms, Content-Type: %s", response->status_code, response->duration_ms, response->get_response_header("Content-Type").c_str());
+                ESP_LOGD("http_request", "Response status: %d, Duration: %u ms, Content-Type: %s", response->status_code, response->duration_ms, response->get_response_header("Content-Type").c_str());
         on_error:
           then:
             - logger.log: "Request failed!"
@@ -299,7 +299,7 @@ on_...:
                             return true;
                         }
                         else {
-                          ESP_LOGI(TAG,"No 'vol' key in this json!");
+                          ESP_LOGI("http_request","No 'vol' key in this json!");
                           return false;
                         }
                     });
